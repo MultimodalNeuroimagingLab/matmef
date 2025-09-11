@@ -8,7 +8,7 @@ This project provides Matlab (mex) functions to read and write MEF 3.0 data usin
 2. Use the functions (as illustrated in the examples below)
 
 ## Building from source
-1. Clone the matmef repository using: `git clone https://github.com/MaxvandenBoom/matmef.git`
+1. Clone the matmef repository using: `git clone https://github.com/MultimodalNeuroimagingLab/matmef.git`
 2. Start matlab and set the matmef folder as your working directory
 3. To compile the .mex files, run the following lines in matlab:
 
@@ -17,6 +17,17 @@ This project provides Matlab (mex) functions to read and write MEF 3.0 data usin
    - `mex init_mef_struct.c matmef_mapping.c mex_utils.c matmef_dataconverter.c`
    - `mex write_mef_segment_metadata.c matmef_write.c mex_utils.c matmef_utils.c matmef_mapping.c matmef_dataconverter.c`
    - `mex write_mef_ts_segment_data.c matmef_write.c mex_utils.c matmef_utils.c matmef_mapping.c matmef_dataconverter.c`
+
+Additional requirements for MAC users prior to mex compilation above:
+
+   a) install xcode Open Mac App Store → Search for Xcode → Install.
+   b) in terminal, switch to full Xcode developer directory: sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+   
+   c) accept the license: sudo xcodebuild -license press (to display license): enter type: agree
+   
+   d) verify MATLAB detects the compiler (back in matlab): mex -setup C --> You should now see an option like: Xcode with Clang
+   
+   e) compile .mex files (see step 3 above)
 
 ## Matlab usage examples
 ```
